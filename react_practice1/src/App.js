@@ -26,7 +26,7 @@ function MainLayout() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response1 = await fetch('http://localhost:8090/Gymapp/test');
+        const response1 = await fetch('http://localhost:8090/myfirstApp/test');
         if (!response1.ok) {
           throw new Error('Network response was not ok');
         }
@@ -38,7 +38,7 @@ function MainLayout() {
       }
 
       try {
-        const response2 = await fetch('http://localhost:8090/Gymapp/test1');
+        const response2 = await fetch('http://localhost:8090/myfirstApp/test1');
         if (!response2.ok) {
           throw new Error('Network response was not ok');
         }
@@ -50,7 +50,7 @@ function MainLayout() {
       }
 
       try {
-        const response3 = await fetch('http://localhost:8090/Gymapp/test2');
+        const response3 = await fetch('http://localhost:8090/myfirstApp/test2');
         if (!response3.ok) {
           throw new Error('Network response was not ok');
         }

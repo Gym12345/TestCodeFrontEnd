@@ -2,29 +2,40 @@
 import React, { useState } from 'react';
 
 function LoginComponent() {
-  const [username, setUsername] = useState('');
+  const [userId, setUserId] = useState('');
   const [password, setPassword] = useState('');
-  
+  //const [message, setMessage] = useState("");
   const handleLogin = async (e) => {
     e.preventDefault();
-    alert(`Logging in with:  ${username} ${password}`);
+    alert(`Logging in with:  ${userId} ${password}`);
     try {
-      const response = await fetch('http://localhost:8090/Gymapp/login', {
+      const response = await fetch('http://localhost:8090/myfirstApp/login', {
         method: 'POST',
         headers: {
-          'Content-Type': 'application/json'
+          'Content-Type': 'application/json',
+          
         },
-        body: JSON.stringify({ username, password })
-      });
+        body: JSON.stringify({ userId, password })
+      })
+      ;
 
       if (!response.ok) {
-        throw new Error('Login failed');
+        throw new Error('network error');
+      }else{
+        const userName=await response.text();
+        if(userName !== "noInfo"){
+          alert("login successful:"+userName);
+        }
+        else{
+          alert("invalid login result:"+userName);
+        }
+
+        // Handle successful login here, e.g., redirect user to dashboard
+        //alert(message);
       }
 
-      // Handle successful login here, e.g., redirect user to dashboard
-      alert('Login successful');
     } catch (error) {
-      alert('Login failed. Please try again.');
+      alert(error);
       console.error('Error:', error);
     }
   };
@@ -34,8 +45,8 @@ function LoginComponent() {
       <h2>Login</h2>
       <form onSubmit={handleLogin}>
         <div>
-          <label>Username:</label>
-          <input type="text" value={username} onChange={(e) => setUsername(e.target.value)} required/>
+          <label>UserId:</label>
+          <input type="text" value={userId} onChange={(e) => setUserId(e.target.value)} required/>
         </div>
         <div>
           <label>Password:</label>
