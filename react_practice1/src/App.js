@@ -1,7 +1,7 @@
 import React from 'react';
 import LoginComponent from './LoginComponent';
 import { Routes, Route} from 'react-router-dom';
-import NewfileComponent from './NewfileComponent';
+import AfterLoginComponent from './AfterLoginComponent';
 import MainComponent from './MainComponent';
 function App() {
   return (
@@ -13,7 +13,7 @@ function App() {
           <Route path="/login" element={<LoginLayout />} />
           <Route path="/" element={<MainLayout />} />
          
-          <Route path="/NewfileComponent" element={<NewFileLayout/>}/>
+          <Route path="/AfterLogin" element={<AfterLoginLayout/>}/>
         </Routes>
       </div>
    
@@ -41,11 +41,11 @@ function LoginLayout() {
 }
 
 
-function NewFileLayout(){
+function AfterLoginLayout(){
   return (
     <div>
       <h1> success</h1>
-    <NewfileComponent/>
+    <AfterLoginComponent/>
     </div>
 
   )

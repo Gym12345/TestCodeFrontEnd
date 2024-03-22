@@ -1,6 +1,6 @@
 import React from 'react';
 
-function NewfileComponent() {
+function AfterLoginComponent() {
  
   return (
     <div>
@@ -10,4 +10,4 @@ function NewfileComponent() {
   );
 }
 
-export default NewfileComponent;
+export default AfterLoginComponent;

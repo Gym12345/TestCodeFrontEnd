@@ -31,7 +31,7 @@ function LoginComponent() {
         if(userName !== "noInfo"){
           alert("login successful:"+userName);
           
-          window.open('NewfileComponent', '_self');
+          window.open('AfterLogin', '_self');
         }
         else{
           alert("invalid login result:"+userName);
