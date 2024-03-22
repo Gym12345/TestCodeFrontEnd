@@ -1,13 +1,18 @@
 // LoginComponent.js
 import React, { useState } from 'react';
 
+
 function LoginComponent() {
   const [userId, setUserId] = useState('');
   const [password, setPassword] = useState('');
-  //const [message, setMessage] = useState("");
+  
+ 
+
+
   const handleLogin = async (e) => {
     e.preventDefault();
-    alert(`Logging in with:  ${userId} ${password}`);
+   
+  
     try {
       const response = await fetch('http://localhost:8090/myfirstApp/login', {
         method: 'POST',
@@ -25,6 +30,8 @@ function LoginComponent() {
         const userName=await response.text();
         if(userName !== "noInfo"){
           alert("login successful:"+userName);
+          
+          window.open('NewfileComponent', '_self');
         }
         else{
           alert("invalid login result:"+userName);

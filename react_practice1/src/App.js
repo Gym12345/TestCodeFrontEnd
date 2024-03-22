@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import LoginComponent from './LoginComponent';
 import { Routes, Route, Link } from 'react-router-dom';
+import NewfileComponent from './NewfileComponent';
 
 function App() {
   return (
@@ -11,6 +12,8 @@ function App() {
         <Routes>
           <Route path="/login" element={<LoginLayout />} />
           <Route path="/" element={<MainLayout />} />
+         
+          <Route path="/NewfileComponent" element={<NewFileLayout/>}/>
         </Routes>
       </div>
    
@@ -101,5 +104,17 @@ function LoginLayout() {
     </div>
   );
 }
+
+
+function NewFileLayout(){
+  return (
+    <div>
+      <h1> success</h1>
+    <NewfileComponent/>
+    </div>
+
+  )
+}
+
 
 export default App;
